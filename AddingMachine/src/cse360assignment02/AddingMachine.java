@@ -4,12 +4,13 @@ package cse360assignment02;
  * This program adds and subtracts numbers and returns them to the user in the form of an equation.
  *  
  * @author Hunter S. Thompson
- * @version 1.0
+ * @version 2.0
  *
  */
 
 public class AddingMachine {
-  private int total;
+  private int total = 0;
+  private String equation = "0";
   
   /**
    * Main method in which calls functions from the class. 
@@ -23,7 +24,9 @@ public class AddingMachine {
    * @return the total
    */
   public int getTotal () {
-    return 0;
+	  System.out.print(total); 
+	  System.out.print("\n"); 
+    return total;
   }
   
   /**
@@ -31,6 +34,8 @@ public class AddingMachine {
    * @param value number to be added to the total. 
    */
   public void add (int value) {
+	  total = (total + value);
+	  equation += " + " + value; 
   }
 
   /**
@@ -38,18 +43,24 @@ public class AddingMachine {
    * @param value number to be subtracted from the total.
    */
   public void subtract (int value) {
+	  total = (total - value);
+	  equation += " - " + value; 
   }
 
   /**
    * Outputs the equation with operations and values. 
    */
-  public String toString () {
-    return "";
+  public String toString () {  
+	  System.out.print(equation + '\n'); 
+    return equation;
   }
 
   /**
-   * Clears the current equation/history.
+   * Clears the current equation and total.
    */
   public void clear() {
+	  equation = "0";
+	  total = 0;
   }
+  
 }
